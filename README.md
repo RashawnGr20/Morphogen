@@ -6,7 +6,7 @@ The project uses a shared field-based representation for geometry, rendering, an
 
 ## Stack
 
-C++, CUDA, OpenGL, GLFW, Dear ImGui, CMake. :contentReference[oaicite:7]{index=7}
+C++, CUDA, OpenGL, GLFW, Dear ImGui, CMake. 
 
 ## Status
 
