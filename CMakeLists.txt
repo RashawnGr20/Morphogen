@@ -6,5 +6,11 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(Morphogen
-src/application/main.cpp
+    src/application/main.cpp
+    src/engine/core/Engine.cpp
+    src/render/opengl/Renderer.cpp
+)
+
+target_include_directories(Morphogen PRIVATE
+    src/engine/core
 )
