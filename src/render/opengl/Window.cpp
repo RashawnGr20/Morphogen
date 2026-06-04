@@ -3,24 +3,55 @@
 
 void Window::create() {
 
+    if (!glfwInit()) { 
+        std::cout << "failed to initialize GLFW\n"; 
+        return; 
+    }
+
+    handle = glfwCreateWindow(800, 600, "MORPHOGEN", nullptr, nullptr); 
+
+    if (!handle) {
+        std::cout << "Failed to create window\n"; 
+        glfwTerminate();
+        return; 
+    }
+
+    glfwMakeContextCurrent(handle); 
+    
     std::cout << "window created\n";
 }
 
-void Window::pollEvents() { 
-    std::cout << "polling window events\n";
+void Window::pollEvents() 
+{ 
+    glfwPollEvents(); 
 
 }
 
-void Window::swapBuffers() { 
-
-    std::cout << "swapping buffers\n"; 
+void Window::swapBuffers() 
+{ 
+    if (handle) { 
+        glfwSwapBuffers(handle);
+    }
+     
 }
 
 bool Window::shouldClose() { 
     
-    return false;    
+    return handle && glfwWindowShouldClose(handle);    
 }
 
-void Window::shutdown() { 
-    std::cout << "window shutting down\n";
+void Window::shutdown() 
+{ 
+   if (handle)  { 
+    glfwDestroyWindow(handle); 
+    handle = nullptr; 
+   }
+
+   glfwTerminate(); 
+   std::cout << "window shutdown\n";  
+}
+
+
+Window::Window() { 
+    handle = nullptr; 
 }

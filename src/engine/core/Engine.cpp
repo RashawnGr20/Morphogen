@@ -33,10 +33,6 @@ void Engine::run()
         renderer.render(frameCount);
 
         frameCount += 1;
-    
-        if (frameCount >= 5) {
-            isRunning = false; 
-        }
     }
     shutdown(); 
 }
