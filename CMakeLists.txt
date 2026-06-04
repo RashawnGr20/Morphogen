@@ -9,6 +9,7 @@ add_executable(Morphogen
     src/application/main.cpp
     src/engine/core/Engine.cpp
     src/render/opengl/Renderer.cpp
+    src/render/opengl/Window.cpp
 )
 
 target_include_directories(Morphogen PRIVATE

@@ -20,11 +20,6 @@ void Engine::update()
 { 
     std::cout << "current frame: " << frameCount << "\n"; 
 
-    frameCount += 1;
-    
-    if (frameCount >= 5) {
-        isRunning = false; 
-    }
 }
 
 void Engine::run()
@@ -33,9 +28,15 @@ void Engine::run()
     isRunning = true; 
     std::cout << "engine is running\n";
     
-    while(isRunning) { 
-        renderer.render(frameCount);
+    while(isRunning && !renderer.shouldClose()) { 
         update();   
+        renderer.render(frameCount);
+
+        frameCount += 1;
+    
+        if (frameCount >= 5) {
+            isRunning = false; 
+        }
     }
     shutdown(); 
 }
