@@ -4,14 +4,15 @@
 void Engine::initialize() 
 {
     frameCount = 0; 
-    std::cout << "starting initialization\n"; 
+    renderer.initialize(); 
 
 }
 
 
 void Engine::shutdown()
 {
-    std::cout << "engine is shutdown\n"; 
+    std::cout << "engine shutdown\n"; 
+    renderer.shutdown(); 
 
 }
 
@@ -33,7 +34,8 @@ void Engine::run()
     std::cout << "engine is running\n";
     
     while(isRunning) { 
-        update(); 
+        renderer.render(frameCount);
+        update();   
     }
     shutdown(); 
 }

@@ -13,4 +13,5 @@ add_executable(Morphogen
 
 target_include_directories(Morphogen PRIVATE
     src/engine/core
+    src/render/opengl
 )
