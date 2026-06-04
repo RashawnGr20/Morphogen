@@ -19,4 +19,4 @@ target_include_directories(Morphogen PRIVATE
     src/render/opengl
 )
 
-target_link_libraries(Morphogen PRIVATE glfw)
+target_link_libraries(Morphogen PRIVATE glfw opengl32)

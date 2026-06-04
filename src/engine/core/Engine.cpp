@@ -18,8 +18,10 @@ void Engine::shutdown()
 
 void Engine::update() 
 { 
+    if (frameCount % 60 == 0 ) { 
     std::cout << "current frame: " << frameCount << "\n"; 
-
+ }
+   
 }
 
 void Engine::run()
