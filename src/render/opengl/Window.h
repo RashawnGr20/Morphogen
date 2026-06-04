@@ -16,5 +16,8 @@ class Window {
     
     private : 
         GLFWwindow* handle; 
+        int width; 
+        int height; 
+        const char* title; 
 
 }; 

@@ -16,7 +16,7 @@ void Renderer::render(int frameCount)
         std::cout << "begin render for frame : " << frameCount << "\n"; 
     }
 
-    glClearColor(0.54f, 0.60f, 0.36f, 1.0f);
+    glClearColor(clearColor.x, clearColor.y, clearColor.z, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT); 
 
     window.swapBuffers(); 
@@ -30,4 +30,9 @@ void Renderer::shutdown()
 
 bool Renderer::shouldClose() {
     return window.shouldClose(); 
+}
+
+Renderer::Renderer() 
+   : clearColor(0.54f, 0.60f, 0.36f)
+{
 }

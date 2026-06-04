@@ -17,6 +17,7 @@ add_executable(Morphogen
 target_include_directories(Morphogen PRIVATE
     src/engine/core
     src/render/opengl
+    src/engine/math
 )
 
 target_link_libraries(Morphogen PRIVATE glfw opengl32)

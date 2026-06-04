@@ -8,7 +8,7 @@ void Window::create() {
         return; 
     }
 
-    handle = glfwCreateWindow(800, 600, "MORPHOGEN", nullptr, nullptr); 
+    handle = glfwCreateWindow(width, height, title, nullptr, nullptr); 
 
     if (!handle) {
         std::cout << "Failed to create window\n"; 
@@ -54,4 +54,7 @@ void Window::shutdown()
 
 Window::Window() { 
     handle = nullptr; 
+    width = 800; 
+    height = 600; 
+    title = "MORPHOGEN"; 
 }
